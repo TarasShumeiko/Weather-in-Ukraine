@@ -1,25 +1,33 @@
 import React from 'react';
-import './App.css';
+import { Grid, Typography, makeStyles } from '@material-ui/core';
 
-function App() {
+import CityPicker from './components/CityPicker';
+import WeatherCard from './components/WeatherCard';
+
+const useStyles = makeStyles({
+  root: {
+    marginTop: '4rem',
+  },
+  title: {
+    marginBottom: '2rem',
+  },
+});
+
+const App = () => {
+  const classes = useStyles();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Grid container justify="center" className={classes.root}>
+      <Grid container justify="center">
+        <Typography variant="h2" className={classes.title}>
+          Weather in Ukraine
+        </Typography>
+      </Grid>
+      <CityPicker />
+      <WeatherCard />
+    </Grid>
   );
-}
+};
+
 
 export default App;
