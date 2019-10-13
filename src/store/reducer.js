@@ -1,7 +1,7 @@
 import { FETCH_WEATHER } from './actions';
 
 const INITIAL_STATE = {
-  weather: {},
+  weather: null,
 };
 
 export default (state = INITIAL_STATE, action) => {

@@ -30,10 +30,11 @@ const useStyles = makeStyles({
 const WeatherCard = () => {
   const classes = useStyles();
   const weather = useSelector(state => state.weather);
+  console.log(weather);
 
   return (
     <>
-      {!!Object.keys(weather).length && <Card className={classes.card}>
+      {weather && <Card className={classes.card}>
         <CardContent>
           <Typography variant="h5" className={classes.title}>
             Weather for {weather.name}
